@@ -26,7 +26,7 @@ class ChannelTest extends TestCase
             ->once()
             ->with('https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=ChabokKey', [
                     'form_params' => [
-                        'user' => ['UserUUID'],
+                        'user' => 'UserUUID',
                         'content' => 'ChabokDescription',
                         'data' => ['id' => 1],
                     ],
@@ -72,7 +72,7 @@ class TestNotifiable
      */
     public function routeNotificationForChabok()
     {
-        return ['uuid' => ['UserUUID']];
+        return ['uuid' => 'UserUUID'];
     }
 }
 

@@ -23,9 +23,9 @@ class ChabokMessage
     }
 
     /**
-     * @param array $user
+     * @param string $user
      */
-    public function __construct($user = [])
+    public function __construct($user = '')
     {
         $this->user = $user;
     }
