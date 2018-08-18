@@ -1,0 +1,40 @@
+{
+    "name": "gdpa/chabok",
+    "description": "Chabok Notifications driver",
+    "homepage": "https://github.com/gdpa/chabok",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Morteza Poussaneh",
+            "email": "morteza.poussaneh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "guzzlehttp/guzzle": "~6.0",
+        "illuminate/notifications": "5.3.*|5.4.*",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.5",
+        "phpunit/phpunit": "4.*",
+        "orchestra/testbench": "3.3.x-dev",
+        "orchestra/database": "3.3.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "NotificationChannels\\Chabok\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NotificationChannels\\Chabok\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
