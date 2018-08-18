@@ -24,7 +24,7 @@ class ChannelTest extends TestCase
         $client = Mockery::mock(Client::class);
         $client->shouldReceive('post')
             ->once()
-            ->with('https://sandbox.push.adpdigital.com/api?access_token=ChabokKey', [
+            ->with('https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=ChabokKey', [
                     'form_params' => [
                         'user' => ['UserUUID'],
                         'content' => 'ChabokDescription',
