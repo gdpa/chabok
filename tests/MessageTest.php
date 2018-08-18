@@ -2,11 +2,11 @@
 
 namespace NotificationChannels\Chabok\Test;
 
-use DateTime;
 use Illuminate\Support\Arr;
 use NotificationChannels\Chabok\ChabokMessage;
+use PHPUnit\Framework\TestCase;
 
-class MessageTest extends \PHPUnit_Framework_TestCase
+class MessageTest extends TestCase
 {
     /** @var \NotificationChannels\Chabok\ChabokMessage */
     protected $message;

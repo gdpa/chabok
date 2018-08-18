@@ -39,7 +39,7 @@ class ChannelTest extends TestCase
     /** @test */
     public function it_throws_an_exception_when_it_is_not_configured()
     {
-        $this->setExpectedException(InvalidConfiguration::class);
+        $this->expectException(InvalidConfiguration::class);
 
         $client = new Client();
         $channel = new ChabokChannel($client);
@@ -49,7 +49,7 @@ class ChannelTest extends TestCase
     /** @test */
     public function it_throws_an_exception_when_it_could_not_send_the_notification()
     {
-        $this->setExpectedException(CouldNotSendNotification::class);
+        $this->expectException(CouldNotSendNotification::class);
 
         $this->app['config']->set('services.chabok.key', 'ChabokKey');
 
