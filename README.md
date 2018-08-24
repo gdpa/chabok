@@ -75,14 +75,13 @@ class ProjectCreated extends Notification
 
 In order to let your Notification know which Chabok user you are targeting, add the `routeNotificationForChabok` method to your Notifiable model.
 
-This method needs to return an array containing the access token of the authorized Chabok user (if it's a private board) and the list ID of the Chabok list to add the card to.
+This method needs to return an uuid containing the your registered token on chabok.
 
 ```php
 public function routeNotificationForChabok()
 {
     return [
-        'token' => 'NotifiableToken',
-        'idList' => 'ChabokListId',
+        'uuid' => 'user-uuid-which-set-on-chabok-by-client',
     ];
 }
 ```
