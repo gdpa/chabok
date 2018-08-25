@@ -89,7 +89,20 @@ public function routeNotificationForChabok()
 ### Available methods
 
 - `content('')`: Accepts a string value for the Chabok notification content.
+- `trackId('')`: Accepts a string value for the Chabok notification trackId.
+- `inApp()`: Call this if you want to set the Chabok notification inApp to true.
+- `live()`: Call this if you want to set the Chabok notification live to true.
+- `alert(''')`: Call this with no parameters if you want to set the Chabok notification useAsAlert to true. If you provide some string, it will set as alert text.
+- `ttl('')`: Accepts a integer value for the Chabok notification ttl.
 - `data([])`: Accepts a array for the Chabok notification data.
+- `fallback([])`: Accepts a array for the Chabok notification fallback.
+- `clientId('')`: Accepts a string value for the Chabok notification clientId.
+- `notification([])`: Accepts a array for the Chabok notification notification.
+- `idr()`: Call this if you want to set the Chabok notification idr to true.
+- `silent()`: Call this if you want to set the Chabok notification silent to true.
+- `binary('')`: Accepts a string value for the Chabok notification contentBinary.
+- `type('')`: Accepts a string value for the Chabok notification contentType.
+- `id('')`: Accepts a number value for the Chabok notification id.
 
 
 ## Changelog
