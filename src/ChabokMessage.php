@@ -11,7 +11,7 @@ class ChabokMessage
     protected $content;
 
     /** @var array*/
-    protected $data;
+    protected $data = [];
     
     /** @var string */
     protected $trackId;
@@ -32,13 +32,13 @@ class ChabokMessage
     protected $ttl;
 
     /** @var array*/
-    protected $fallback;
+    protected $fallback = [];
 
     /** @var string */
     protected $clientId;
 
     /** @var array*/
-    protected $notification;
+    protected $notification = [];
 
     /** @var boolean */
     protected $idr = false;
@@ -300,7 +300,7 @@ class ChabokMessage
             'user' => $this->user,
             'content' => $this->content,
         ];
-        if ($this->data)
+        if (count($this->data))
             $parameters = array_merge($parameters, ['data' => $this->data]);
 
         if ($this->trackId)
@@ -324,13 +324,13 @@ class ChabokMessage
         if ($this->ttl)
             $parameters = array_merge($parameters, ['ttl' => $this->ttl]);
 
-        if ($this->fallback)
+        if (count($this->fallback))
             $parameters = array_merge($parameters, ['fallback' => $this->fallback]);
 
         if ($this->clientId)
             $parameters = array_merge($parameters, ['clientId' => $this->clientId]);
 
-        if ($this->notification)
+        if (count($this->notification))
             $parameters = array_merge($parameters, ['notification' => $this->notification]);
 
         if ($this->idr)
