@@ -33,7 +33,9 @@ class ChabokChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        if (! $routing = collect($notifiable->routeNotificationFor('Chabok'))) {
+        $routing = collect($notifiable->routeNotificationFor('Chabok'));
+
+        if ($routing->isEmpty()) {
             return;
         }
 
