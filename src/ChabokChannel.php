@@ -19,7 +19,7 @@ class ChabokChannel
     public function __construct(Client $client)
     {
         $this->client = $client;
-        self::$API_ENDPOINT = 'https://' . config('services.chabok.app_id') . '.push.adpdigital.com/api/push/toUsers';
+        self::$API_ENDPOINT = 'https://' . config('services.chabok.app_id') . '.push.adpdigital.com/api/push/notifyUsers';
     }
 
     /**
