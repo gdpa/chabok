@@ -49,6 +49,9 @@ class ChabokChannel
 
         $response = $this->client->post(self::$API_ENDPOINT.'?access_token='.$key, [
             'form_params' => Arr::set($chabokParameters, 'user', $routing->get('uuid')),
+            'connect_timeout' => 20,
+            'read_timeout' => 50,
+            'timeout' => 60,
         ]);
 
         if ($response->getStatusCode() !== 200) {
