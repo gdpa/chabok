@@ -48,7 +48,7 @@ class ChabokChannel
         $chabokParameters = $notification->toChabok($notifiable)->toArray();
 
         $response = $this->client->post(self::$API_ENDPOINT.'?access_token='.$key, [
-            'json' => Arr::set($chabokParameters, 'user', $routing->get('uuid')),
+            'form_params' => Arr::set($chabokParameters, 'user', $routing->get('uuid')),
             'connect_timeout' => 20,
             'read_timeout' => 50,
             'timeout' => 60,
