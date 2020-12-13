@@ -45,7 +45,20 @@ Add your Chabok REST API Key to your `config/services.php`:
 ],
 ...
 ```
-
+You can add additional configuration for adding to request from config:
+```php
+// config/services.php
+...
+'chabok' => [
+    'app_id' => env('CHABOK_APP_ID'), 
+    'key' => env('CHABOK_API_KEY'),
+    'additional' => [
+        'timeout' => 5,
+        'request_timeout' => 10
+    ]
+],
+...
+```
 **Note: If you want to test chabok set `app_id` to `sandbox`.**
 
 ## Usage

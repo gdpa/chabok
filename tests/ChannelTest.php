@@ -37,6 +37,31 @@ class ChannelTest extends TestCase
     }
 
     /** @test */
+    public function it_can_send_a_notification_with_additional_data_from_config()
+    {
+        $additional = ['timeout' => 10, 'connect_timeout' => 10];
+        $this->app['config']->set('services.chabok.app_id', 'sandbox');
+        $this->app['config']->set('services.chabok.key', 'ChabokKey');
+        $this->app['config']->set('services.chabok.additional', $additional);
+
+        $response = new Response(200);
+        $client = Mockery::mock(Client::class);
+        $client->shouldReceive('post')
+            ->once()
+            ->with('https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=ChabokKey', [
+                'form_params' => [
+                    'user' => 'UserUUID',
+                    'content' => 'ChabokDescription',
+                    'data' => ['id' => 1],
+                ],
+                $additional,
+            ])
+            ->andReturn($response);
+        $channel = new ChabokChannel($client);
+        $channel->send(new TestNotifiable(), new TestNotification());
+    }
+
+    /** @test */
     public function it_throws_an_exception_when_it_is_not_configured()
     {
         $this->expectException(InvalidConfiguration::class);

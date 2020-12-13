@@ -40,16 +40,18 @@ class ChabokChannel
         }
 
         $key = config('services.chabok.key');
+        $additionalConfiguration = config('services.chabok.additional') ?? [];
 
         if (is_null($key)) {
             throw InvalidConfiguration::configurationNotSet();
         }
 
         $chabokParameters = $notification->toChabok($notifiable)->toArray();
-
-        $response = $this->client->post(self::$API_ENDPOINT.'?access_token='.$key, [
-            'form_params' => Arr::set($chabokParameters, 'user', $routing->get('uuid')),
-        ]);
+        $params = array_merge(
+            ['form_params' => Arr::set($chabokParameters, 'user', $routing->get('uuid'))],
+            $additionalConfiguration,
+        );
+        $response = $this->client->post(self::$API_ENDPOINT.'?access_token='.$key, $params);
 
         if ($response->getStatusCode() !== 200) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($response);
