@@ -32,6 +32,21 @@ You can install the package via composer:
 composer require gdpa/chabok
 ```
 
+Install for laravel 7:
+``` bash
+composer require gdpa/chabok:^3.1
+```
+
+Install for laravel 6:
+``` bash
+composer require gdpa/chabok:^2.0
+```
+
+Install for laravel < 5.8:
+``` bash
+composer require gdpa/chabok:^1.0
+```
+
 ### Setting up the Chabok service
 
 Add your Chabok REST API Key to your `config/services.php`:
