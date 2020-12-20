@@ -10,13 +10,10 @@ jobs:
 
         strategy:
             matrix:
-                php: [8.0, 7.3]
-                laravel: [8.*]
-                dependency-version: [prefer-lowest, prefer-stable]
-                os: [ubuntu-latest, windows-latest]
-                include:
-                    -   laravel: 8.*
-                        testbench: 6.*
+                php: [ 7.2.5 ]
+                laravel: [ 7.* ]
+                dependency-version: [ prefer-lowest, prefer-stable ]
+                os: [ ubuntu-latest, windows-latest ]
 
         name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
@@ -33,7 +30,7 @@ jobs:
 
             - name: Install dependencies
               run: |
-                  composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+                  composer require --no-interaction --no-update
                   composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
 
             - name: Execute tests
