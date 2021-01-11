@@ -1,7 +1,7 @@
 {
-    "name": "gdpa/kavenegar",
-    "description": "Kavenegar Notifications driver",
-    "homepage": "https://github.com/gdpa/kavenegar",
+    "name": "gdpa/chabok",
+    "description": "Chabok Notifications driver",
+    "homepage": "https://github.com/gdpa/chabok",
     "license": "MIT",
     "authors": [
         {
@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "NotificationChannels\\Kavenegar\\": "src"
+            "NotificationChannels\\Chabok\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "NotificationChannels\\Kavenegar\\Test\\": "tests"
+            "NotificationChannels\\Chabok\\Test\\": "tests"
         }
     },
     "scripts": {
